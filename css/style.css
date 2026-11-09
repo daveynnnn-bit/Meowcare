@@ -243,3 +243,90 @@ details.acc .acc-body { padding: 0 16px 16px; display: grid; gap: 6px; animation
 @media (min-width: 900px) { .toast { bottom: 30px; } }
 .foot-note { margin-top: 24px; font-size: .85rem; opacity: .8; }
 .foot-note ul { margin: 4px 0 0; padding-left: 18px; }
+
+/* ===== Perbaikan form pengingat ===== */
+.form-inline .field {
+  position: relative;
+  padding-bottom: 1.1rem;
+}
+
+.form-inline .field .err {
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  min-height: 1em;
+}
+
+/* ===== Perbaikan kartu pengingat ===== */
+.rem {
+  display: grid;
+  grid-template-columns: auto minmax(0, 1fr) auto auto auto;
+  align-items: center;
+  gap: 12px;
+}
+
+.rem .row-main {
+  min-width: 0;
+}
+
+.rem .chip {
+  white-space: nowrap;
+}
+
+.rem .btn {
+  white-space: nowrap;
+}
+
+@media (max-width: 700px) {
+  .rem {
+    grid-template-columns: auto minmax(0, 1fr);
+  }
+
+  .rem .chip {
+    grid-column: 2;
+    justify-self: start;
+  }
+
+  .rem .btn {
+    grid-column: 2;
+    justify-self: start;
+  }
+}
+
+/* Menyamakan posisi tombol Simpan Pengingat */
+.form-inline > .btn {
+  align-self: end;
+  margin-bottom: 1.1rem;
+}
+
+/* FIX FINAL BADGE STATUS STERIL */
+.cat-card .cat-top {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+.cat-card .cat-top > div {
+    flex: 1;
+    min-width: 0;
+}
+
+.cat-card .badges {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 6px;
+}
+
+.cat-card .badges .chip.sun,
+.cat-card .badges .chip.mint {
+    display: inline-flex;
+    width: auto;
+    height: auto;
+    min-width: max-content;
+    padding: 5px 12px;
+    border-radius: 999px;
+    white-space: nowrap;
+    line-height: 1.4;
+    flex: 0 0 auto;
+}
