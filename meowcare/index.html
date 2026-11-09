@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>MeowCare - Teman digital perawatan kucing</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css">
+  <noscript><style>.feat{opacity:1!important;transform:none!important}</style></noscript>
+</head>
+<body>
+
+  <!-- Halaman sambutan / masuk -->
+  <div id="welcome" class="welcome hidden">
+    <section class="scene">
+      <div class="sun" aria-hidden="true"></div>
+      <div class="cloud" style="top:70px;width:96px;animation-delay:-10s" aria-hidden="true"></div>
+      <div class="cloud" style="top:130px;width:128px;animation-delay:-28s" aria-hidden="true"></div>
+
+      <div class="scene-body">
+        <p class="brand">🐾 MeowCare</p>
+        <h1>
+          <span class="sr-only">Haiii, selamat datang di MeowCare! 🐾</span>
+          <span id="typed" aria-hidden="true" data-text="Haiii, selamat datang di MeowCare! 🐾"></span>
+        </h1>
+        <p class="feat lead" style="transition-delay:.1s">
+          MeowCare adalah teman digital untuk merawat kucing kesayanganmu.
+          Catat data kucing, jadwal makan, dan pengingat perawatan, lalu pelajari
+          panduan makan dan kesehatannya di satu tempat.
+        </p>
+        <div class="feat-grid">
+          <div class="feat tile" style="transition-delay:.25s"><b>🐱 Kucingku</b><span>Simpan data dan foto tiap kucing.</span></div>
+          <div class="feat tile" style="transition-delay:.4s"><b>🍽️ Jadwal makan</b><span>Atur jam dan porsi, centang kalau sudah diberi.</span></div>
+          <div class="feat tile" style="transition-delay:.55s"><b>⏰ Pengingat</b><span>Vaksin, obat cacing, grooming, dan ganti pasir.</span></div>
+          <div class="feat tile" style="transition-delay:.7s"><b>📚 Panduan</b><span>Feeding Guide dan Health Guide yang mudah dipahami.</span></div>
+        </div>
+      </div>
+
+      <div class="stage" aria-hidden="true">
+        <div class="ground"></div>
+        <div class="walker" data-walker></div>
+      </div>
+    </section>
+
+    <section class="login">
+      <form class="login-card" id="welcome-form" novalidate>
+        <h2>Masuk ke MeowCare</h2>
+        <p class="muted">Cukup tulis namamu. Datamu disimpan di browser ini saja dan tidak dikirim ke mana pun.</p>
+        <label class="field">
+          <span>Namamu</span>
+          <input type="text" name="user" id="welcome-name" maxlength="30" autocomplete="given-name" placeholder="mis. Fasha" required>
+          <small class="err" id="welcome-err" role="alert"></small>
+        </label>
+        <button class="btn btn-primary btn-block" type="submit">Mulai 🐾</button>
+      </form>
+    </section>
+  </div>
+
+  <!-- Aplikasi utama -->
+  <div id="app" class="app hidden">
+    <aside class="side">
+      <div class="side-brand">🐾 MeowCare</div>
+      <nav class="nav" aria-label="Menu utama">
+        <a href="#/dashboard" data-nav="dashboard"><i>🏠</i><span>Dashboard</span></a>
+        <a href="#/cats" data-nav="cats"><i>🐱</i><span>Kucingku</span></a>
+        <a href="#/feeding" data-nav="feeding"><i>🍽️</i><span>Feeding</span></a>
+        <a href="#/reminders" data-nav="reminders"><i>⏰</i><span>Pengingat</span></a>
+        <a href="#/fguide" data-nav="fguide"><i>🥣</i><span>Feeding Guide</span></a>
+        <a href="#/hguide" data-nav="hguide"><i>🩺</i><span>Health Guide</span></a>
+      </nav>
+    </aside>
+
+    <div class="main">
+      <div class="topbar">
+        <span class="top-brand">🐾 MeowCare</span>
+        <span class="spacer"></span>
+        <a class="btn btn-ghost btn-sm" href="#/about">Tentang</a>
+        <button class="btn btn-ghost btn-sm" data-action="toggle-sound" id="sound-btn" aria-label="Nyalakan atau matikan suara">🔊</button>
+        <button class="btn btn-ghost btn-sm" data-action="logout">Keluar</button>
+      </div>
+      <main id="view" class="view" tabindex="-1"></main>
+    </div>
+  </div>
+
+  <div id="modal" class="modal hidden" role="dialog" aria-modal="true"></div>
+  <div id="toast" class="toast" role="status" aria-live="polite"></div>
+
+  <script src="js/data.js"></script>
+  <script src="js/app.js"></script>
+</body>
+</html>
