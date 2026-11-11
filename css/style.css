@@ -306,7 +306,7 @@ details.acc .acc-body { padding: 0 16px 16px; display: grid; gap: 6px; animation
     gap: 12px;
 }
 
-.cat-card .cat-top > div {
+.cat-card .cat-top > div:not(.avatar) {
     flex: 1;
     min-width: 0;
 }
@@ -328,5 +328,29 @@ details.acc .acc-body { padding: 0 16px 16px; display: grid; gap: 6px; animation
     border-radius: 999px;
     white-space: nowrap;
     line-height: 1.4;
+    flex: 0 0 auto;
+}
+
+/* FIX FOTO PROFIL KUCING */
+.cat-card .avatar {
+    flex: 0 0 64px;
+    width: 64px;
+    height: 64px;
+    min-width: 64px;
+    aspect-ratio: 1 / 1;
+    border-radius: 50%;
+    object-fit: cover;
+}
+
+/* FIX BADGE STATUS STERIL */
+.cat-card .badges .chip.sun,
+.cat-card .badges .chip.mint {
+    position: static;
+    width: auto;
+    height: auto;
+    min-width: 0;
+    border-radius: 999px;
+    padding: 5px 12px;
+    white-space: nowrap;
     flex: 0 0 auto;
 }
